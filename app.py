@@ -228,7 +228,7 @@ if prompt:
 
 
             try:
-                retrieved_matches = search_knowledge(prompt)
+                retrieved_matches = search_approved_websites(prompt)
 
                 if retrieved_matches:
                     source_context = "\n\n".join(
