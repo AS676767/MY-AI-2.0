@@ -16,8 +16,7 @@ st.set_page_config(
 
 # ---------------- CUSTOM DESIGN ----------------
 
-: #778196;
-        font-si
+
 st.markdown("""
 <style>
     .stApp {
