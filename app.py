@@ -16,47 +16,32 @@ st.set_page_config(
 
 # ---------------- CUSTOM DESIGN ----------------
 
+: #778196;
+        font-si
 st.markdown("""
 <style>
     .stApp {
-        background-color: #f7f8fa;
-    }
-
-
-    header[data-testid="stHeader"] {
-        background-color: #f7f8fa;
-    }
-
-    .main-title {
-        font-size: 38px;
-        font-weight: 700;
+        background-color: #ffffff;
         color: #202938;
-        text-align: center;
-        margin-top: 65px;
-        margin-bottom: 10px;
-    }
-
-    .subtitle {
-        text-align: center;
-        color: #778196;
-        font-size: 16px;
-        margin-bottom: 35px;
-    }
-
-    [data-testid="stChatMessage"] {
-        background-color: white;
-        border: 1px solid #e8ebf0;
-        border-radius: 14px;
-        padding: 15px;
     }
 
     [data-testid="stSidebar"] {
-        background-color: #ffffff;
-        border-right: 1px solid #e8ebf0;
+        background-color: #f8f9fb;
+        border-right: 1px solid #eeeeee;
+    }
+
+    [data-testid="stChatMessage"] {
+        background-color: transparent;
+        border: none;
+        padding: 12px 18px;
     }
 
     .stChatInput textarea {
-        background-color: white;
+        border-radius: 14px;
+    }
+
+    h1, h2, h3 {
+        color: #202938;
     }
 </style>
 """, unsafe_allow_html=True)
