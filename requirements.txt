@@ -1,0 +1,9 @@
+
+streamlit
+groq
+beautifulsoup4
+requests
+trafilatura
+chromadb
+sentence-transformers
+lxml_html_clean
