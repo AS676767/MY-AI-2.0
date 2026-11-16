@@ -82,6 +82,35 @@ if not tavily_api_key:
     st.stop()
 
 tavily = TavilyClient(api_key=tavily_api_key)
+def search_approved_websites(question):
+    approved_domains = list({
+        urlparse(source).netloc.replace("www.", "")
+        for source in APPROVED_SOURCES
+    })
+
+    results = tavily.search(
+        query=question,
+        search_depth="basic",
+        max_results=5,
+        include_domains=approved_domains
+    )
+
+    approved_results = []
+
+    for result in results.get("results", []):
+        url = result.get("url", "")
+        domain = urlparse(url).netloc.replace("www.", "")
+
+        if any(
+            domain == approved or domain.endswith("." + approved)
+            for approved in approved_domains
+        ):
+            approved_results.append({
+                "url": url,
+                "content": result.get("content", "")
+            })
+
+    return approved_results
 
 # ---------------- CHAT HISTORY ----------------
 
