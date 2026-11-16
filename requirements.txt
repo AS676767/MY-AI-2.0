@@ -7,3 +7,4 @@ trafilatura
 chromadb
 sentence-transformers
 lxml_html_clean
+tavily-python
