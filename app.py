@@ -75,6 +75,13 @@ if not api_key:
     st.stop()
 
 client = Groq(api_key=api_key)
+tavily_api_key = st.secrets.get("TAVILY_API_KEY", os.environ.get("TAVILY_API_KEY"))
+
+if not tavily_api_key:
+    st.error("Please configure your Tavily API key.")
+    st.stop()
+
+tavily = TavilyClient(api_key=tavily_api_key)
 
 # ---------------- CHAT HISTORY ----------------
 
