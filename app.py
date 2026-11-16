@@ -152,39 +152,7 @@ with st.sidebar:
         st.session_state.messages = []
         st.rerun()
 
-    st.markdown("### 📚 Educational Sources")
-    website_url = st.text_input(
-        "Enter an approved webpage URL",
-        placeholder="https://www.nasa.gov/..."
-    )
-
-    if st.button("＋ Add Website", use_container_width=True):
-        if website_url:
-            with st.spinner("Reading webpage..."):
-                result = add_website_to_database(website_url)
-            st.info(result)
-        else:
-            st.warning("Please enter a webpage URL.")
-
-    st.markdown("### 🌐 Bulk Website Import")
-
-    if st.button("Import Approved Websites", use_container_width=True):
-        with st.spinner("Checking approved websites and importing eligible pages..."):
-            try:
-                import_results = bulk_import_approved_sources(
-                    max_pages_per_site=3
-                )
-
-                st.success(
-                    f"Imported pages: {import_results['imported']}"
-                )
-                st.info(
-                    f"Websites skipped: {import_results['skipped']}"
-                )
-
-            except Exception as e:
-                st.error(f"Import failed: {e}")
-
+  
     st.caption("Powered by Groq AI")
 
 # ---------------- MAIN SCREEN ----------------
